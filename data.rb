@@ -43,7 +43,7 @@ def fill_database()
 database = []
   # - Create Streets in database
         straten.each do |name, info|
-           database.push Street.new(straat,info[2],info[4],info[5],info[0],info[1])
+           database.push Street.new(name,info[2],info[4],info[5],info[0],info[1])
         end
 
   # - Create Stations in database

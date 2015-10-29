@@ -65,7 +65,7 @@ end
 
 answer = "y"
 while answer == "y"
-  straten = buy_street(straten,name)
+  buy_street(straten,name)
   puts "Would you like to buy another property? (y/n)"
   answer = gets.chomp
 end

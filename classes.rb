@@ -21,7 +21,7 @@ class Property
     @price = price
     @revenue = revenue
     @set_size = set_size
-    @owner = 'vancant'
+    @owner = 'vacant'
   end
 end
 
