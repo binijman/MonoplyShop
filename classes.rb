@@ -14,13 +14,14 @@ end
 # ------------------------
 
 class Property
-  attr_accessor :name, :price, :revenue, :owner, :set_size
+  attr_accessor :name, :price, :revenue, :owner, :set_size, :group
 
-  def initialize(name, price, revenue, set_size)
+  def initialize(name, price, revenue, owner, set_size, group)
     @name = name
     @price = price
     @revenue = revenue
     @set_size = set_size
+    @group = group
     @owner = 'vacant'
   end
 end
@@ -28,12 +29,10 @@ end
 # ------------------------
 
     class Street < Property
-      attr_accessor :town, :color
-
-      def initialize(name, price, revenue, set_size, town, color)
-        @town = town
+      attr_accessor :color
+      def initialize(name, price, revenue, set_size, group, color)
         @color = color
-        super(name, price, revenue, set_size)
+        super(name, price, revenue, owner, set_size, group)
       end
       def rent(set)
         if set == set_size
@@ -52,7 +51,8 @@ end
       @price = 100
       @revenue = 25
       @set_size = 2
-      super(name, @price, @revenue, @set_size)
+      @group = "Nutsbedrijf"
+      super(name, @price, @revenue, @owner, @set_size, @group)
     end
     def rent(set)
       if set == set_size
@@ -72,7 +72,8 @@ end
         @price = 200
         @revenue = 25
         @set_size = 4
-        super(name, @price, @revenue, @set_size)
+        @group = "Station"
+        super(name, @price, @revenue, @owner, @set_size, @group)
       end
       def rent(set)
         return @revenue * (2**(set - 1))
