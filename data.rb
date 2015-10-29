@@ -64,6 +64,7 @@ require "./classes.rb"
 
 
 database = fill_database()
+set= 1
 
 # - Debugging scripts to test data
 database.each do |card|
@@ -71,7 +72,7 @@ database.each do |card|
 end
 
 
-  set= 1
+
 
   st1 = Station.new('Noord')
   st2 = Station.new('Zuid')
