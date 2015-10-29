@@ -33,8 +33,10 @@ system('clear')
                "Kalverstraat" => ["Amsterdam", "Bankrupt-Blue", 400, "vacant", 50,2],
               }
 
-    stations =( "Noord", "Oost", "Zuid", "West" )
-    nutsbedrijven =( "Waterleiding", "Elektriciteitsbedrijf" )
+    stations =
+            [ "Noord", "Oost", "Zuid", "West" ]
+    nutsbedrijven =
+            [ "Waterleiding", "Elektriciteitsbedrijf" ]
 
 =======
 
