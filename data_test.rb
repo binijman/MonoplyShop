@@ -38,32 +38,33 @@ system('clear')
     nutsbedrijven =
             [ "Waterleiding", "Elektriciteitsbedrijf" ]
 
-=======
 
 system('clear')
 
 
-
-database = []
-set= 1
-      straten.each do |straat, info|
-         database.push Street.new(straat,info[2],info[4],info[5],info[0],info[1])
-      end
-      straten.each do |straat, info|
+# - Create Streets in database
+      straten.each do |name, info|
          database.push Street.new(straat,info[2],info[4],info[5],info[0],info[1])
       end
 
-      database.push Station.new('Noord')
-      database.push Station.new('Zuid')
-      database.push Station.new('Oost')
-      database.push Station.new('West')
+# - Create Stations in database
+      stations.each do |name|
+         database.push Station.new(name)
+      end
 
-      database.push Utility.new('Waterbedrijf')
-      database.push Utility.new('Zuid')
+# - Create Utitilty Companies in database
+      nutsbedrijven.each do |name|
+         database.push Station.new(name)
+      end
 
       database.each do |card|
         puts "Rent for #{card.name} = € #{card.rent(set)}"
       end
+
+# - Code
+
+  database = []
+  set= 1
 
   st1 = Station.new('Noord')
   st2 = Station.new('Zuid')
