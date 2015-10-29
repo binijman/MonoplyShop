@@ -59,24 +59,3 @@ database = []
         return database
 end
 # - End Method
-
-
-
-
-# - Debugging scripts to test data
-# database.each do |card|
-#   puts "Rent for #{card.name} = € #{card.rent(set)}"
-# end
-  #
-  #
-  # set = 1
-  #
-  # st1 = Station.new('Noord')
-  # st2 = Station.new('Zuid')
-  #
-  # puts "\nType set size (1 - 3) (for set test)"
-  # set = gets.chomp.to_i
-  # brink = Street.new('Brink',60,4,2,'Ons Dorp',"Purple")
-  #
-  # puts "\nRent for #{brink.name} in the Town #{brink.town}= € #{brink.rent(set)} (#{set}/2)"
-  # puts "Rent for #{st1.name} = € #{st1.rent(set)} (#{set}/4) "

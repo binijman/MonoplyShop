@@ -6,10 +6,12 @@ def buy_property(database,player)
   #-List available cards
   puts  "Which available cards would you like to buy?\n "
   vacant_list = []
-  database.each_with_index do |property, i|
+  i = 0
+  database.each do |property|
     if property.owner == "vacant"
       puts "#{i+1} - € #{property.price}\t€ #{property.revenue} revenue per month,\t#{property.name}"
       vacant_list << property.name
+      i += 1
     end
   end
 
@@ -37,8 +39,13 @@ list_cards = []
 puts "Welcome on the street-shop Online!\n\nWhat is your name?"
 player = gets.chomp
 puts "Here you can buy your own street and create revenue from tennants!\n\n"
-buy_property(database,player)
 
+answer = "y"
+while answer == "y"
+  buy_property(database,player)
+  puts "Would you like to buy another property? (y/n)"
+  answer = gets.chomp
+end
 #
 # database.each do |street|
 #   puts "Rent for #{street.name} = € #{street.rent(set)}"
