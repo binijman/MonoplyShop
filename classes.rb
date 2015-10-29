@@ -31,9 +31,9 @@ end
       attr_accessor :town, :color
 
       def initialize(name, price, revenue, set_size, town, color)
-        super(name, price, revenue, set_size)
         @town = town
         @color = color
+        super(name, price, revenue, set_size)
       end
       def rent(set)
         if set == set_size
@@ -48,9 +48,11 @@ end
 # ------------------------
 
   class Utility < Property
-    def initialize(name, price, revenue, set_size, town, color)
-      super(name, price, revenue, set_size)
+    def initialize(name)
+      @price = 100
+      @revenue = 25
       @set_size = 2
+      super(name, @price, @revenue, @set_size)
     end
     def rent(set)
       if set == set_size
@@ -67,10 +69,10 @@ end
 
   class Station < Property
       def initialize(name)
-        super(name, price, revenue, set_size)
         @price = 200
         @revenue = 25
         @set_size = 4
+        super(name, @price, @revenue, @set_size)
       end
       def rent(set)
         return @revenue * (2**(set - 1))

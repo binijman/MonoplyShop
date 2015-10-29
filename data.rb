@@ -1,6 +1,6 @@
 require "./classes.rb"
 
-system('clear')
+# system('clear')
 # - Method to Fill the Store Database.
 
   def fill_database()
@@ -41,12 +41,11 @@ system('clear')
             [ "Waterleiding", "Elektriciteitsbedrijf" ]
 
 
-system('clear')
 
-database = []
   # - Create Streets in database
+           database = []
         straten.each do |name, info|
-           database.push Street.new(straat,info[2],info[4],info[5],info[0],info[1])
+           database.push Street.new(name,info[2],info[4],info[5],info[0],info[1])
         end
 
   # - Create Stations in database
@@ -64,7 +63,7 @@ database = []
 # - End Method
 
 
-
+database = fill_database()
 
 # - Debugging scripts to test data
 database.each do |card|
