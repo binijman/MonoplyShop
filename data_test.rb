@@ -30,6 +30,14 @@ require "./classes.rb"
                "Leidsche-Straat" => ["Amsterdam", "Bankrupt-Blue", 350, "vacant", 35,2],
                "Kalverstraat" => ["Amsterdam", "Bankrupt-Blue", 400, "vacant", 50,2],
               }
+
+    stations =(
+              "Noord", "Oost", "Zuid", "West"
+              )
+    nutsbedrijven =(
+              "Waterleiding", "Elektriciteitsbedrijf"
+              )
+
 system('clear')
 
 arr = []
