@@ -5,7 +5,7 @@ require "./data.rb"
 def buy_property(database,player)
   #-List available cards
   puts  "Which available cards would you like to buy?\n "
-  list_cards = []
+  vacant_list = []
   database.each_with_index do |property, i|
     if property.owner == "vacant"
       puts "#{i+1} - € #{property.price}\t€ #{property.revenue} revenue per month,\t#{property.name}"
