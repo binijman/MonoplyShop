@@ -17,7 +17,6 @@ streets = collection.streets
 
 arr.each do |street|
   puts "Rent for #{street.name} = € #{street.rent(set)}"
-puts "copyright reserved for M. Akif"
 
 end
 
