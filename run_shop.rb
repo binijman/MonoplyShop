@@ -1,28 +1,46 @@
 require "./classes.rb"
 require "./data.rb"
 
-# st1 = Station.new('Noord')
-# st2 = Station.new('Zuid')
-#
-# set = 3
-# brink = Street.new('Brink',100,12,3,'Utrecht',"Orange")
-#
-# puts "Rent for #{brink.name} = € #{brink.rent(set)}"
-#
-# set = 4
-# puts "Rent for #{st1.name} = € #{st1.rent(set)}"
-#
-# collection = StreetCollection.new()
-# streets = collection.streets
 
-# create database var -> array[obj]
-database = fill_database()
-set = 3
-database.each do |street|
-  puts "Rent for #{street.name} = € #{street.rent(set)}"
+def buy_street(database,player)
+  #-List available cards
+  puts  "Which available cards would you like to buy?\n "
+  index = 1
+  database.each do |name, info|
+    if info[3]=="vacant"
+      puts "#{index} - € #{info[2]}\t€ #{info[4]} revenue per month\t- #{info[0]},\t#{name}"
+      list_cards << name
+      index += 1
+    end
+  end
 
-
+  #-Ask choise
+  choice = ""
+  while !(Array(1..index).include? choice)
+    puts "\nPlease enter your choice (1 - #{index-1})\n "
+    choice = gets.chomp.to_i
+  end
+  puts "\n#{player} your choice is #{list_cards[choice]}\n "
+  database[list_cards[choice-1]][3]="#{player}"
+  return straten
 end
 
-#update the file appel
-#menno joined the party!
+
+#-Vuldatabase
+database = fill_database()
+#-Tijdelijke set
+set = 3
+list_cards = []
+
+system ('clear')
+
+#-Intro + playername
+puts "Welcome on the street-shop Online!\n\nWhat is your name?"
+player = gets.chomp
+puts "Here you can buy your own street and create revenue from tennants!\n\n"
+buy_street(database,player)
+
+#
+# database.each do |street|
+#   puts "Rent for #{street.name} = € #{street.rent(set)}"
+# end

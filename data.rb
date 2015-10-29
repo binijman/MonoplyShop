@@ -2,7 +2,7 @@ require "./classes.rb"
 
 # - Method to Fill the Store Database.
 
-  def fill_database()
+def fill_database()
       straten = {"Dorpsstraat" => ["Ons Dorp", "Purple", 60, "vacant", 2,2],
                "Brink" => ["Ons Dorp", "Purple", 60, "vacant", 4,2],
 
@@ -40,11 +40,10 @@ require "./classes.rb"
             [ "Waterleiding", "Elektriciteitsbedrijf" ]
 
 
-
+database = []
   # - Create Streets in database
-           database = []
         straten.each do |name, info|
-           database.push Street.new(name,info[2],info[4],info[5],info[0],info[1])
+           database.push Street.new(straat,info[2],info[4],info[5],info[0],info[1])
         end
 
   # - Create Stations in database
@@ -58,20 +57,19 @@ require "./classes.rb"
         end
 
         return database
-  end
+end
 # - End Method
 
-#
-# database = fill_database()
-# set= 1
-#
-# # - Debugging scripts to test data
+
+
+
+# - Debugging scripts to test data
 # database.each do |card|
 #   puts "Rent for #{card.name} = € #{card.rent(set)}"
 # end
-#
-#
   #
+  #
+  # set = 1
   #
   # st1 = Station.new('Noord')
   # st2 = Station.new('Zuid')
