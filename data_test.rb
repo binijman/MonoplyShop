@@ -32,18 +32,15 @@ system('clear')
                "Leidsche-Straat" => ["Amsterdam", "Bankrupt-Blue", 350, "vacant", 35,2],
                "Kalverstraat" => ["Amsterdam", "Bankrupt-Blue", 400, "vacant", 50,2],
               }
-<<<<<<< Updated upstream
 
-    stations =(
-              "Noord", "Oost", "Zuid", "West"
-              )
-    nutsbedrijven =(
-              "Waterleiding", "Elektriciteitsbedrijf"
-              )
+    stations =( "Noord", "Oost", "Zuid", "West" )
+    nutsbedrijven =( "Waterleiding", "Elektriciteitsbedrijf" )
+
+=======
 
 system('clear')
-=======
->>>>>>> Stashed changes
+
+
 
 database = []
 set= 1
