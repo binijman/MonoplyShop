@@ -1,3 +1,18 @@
+
+class Player
+  attr_accessor :name, :budget
+
+  def initialize(name)
+    @name = name
+    @budget = 2000
+  end
+  def list_propery
+
+  end
+end
+
+# ------------------------
+
 class Property
   attr_accessor :name, :price, :revenue, :owner, :set_size
 
@@ -53,7 +68,7 @@ end
   class Station < Property
       def initialize(name)
         super(name, price, revenue, set_size)
-        @price = 100
+        @price = 200
         @revenue = 25
         @set_size = 4
       end

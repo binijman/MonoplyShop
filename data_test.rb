@@ -1,5 +1,7 @@
 require "./classes.rb"
 
+system('clear')
+
       straten = {"Dorpsstraat" => ["Ons Dorp", "Purple", 60, "vacant", 2,2],
                "Brink" => ["Ons Dorp", "Purple", 60, "vacant", 4,2],
 
@@ -30,6 +32,7 @@ require "./classes.rb"
                "Leidsche-Straat" => ["Amsterdam", "Bankrupt-Blue", 350, "vacant", 35,2],
                "Kalverstraat" => ["Amsterdam", "Bankrupt-Blue", 400, "vacant", 50,2],
               }
+<<<<<<< Updated upstream
 
     stations =(
               "Noord", "Oost", "Zuid", "West"
@@ -39,16 +42,28 @@ require "./classes.rb"
               )
 
 system('clear')
+=======
+>>>>>>> Stashed changes
 
-arr = []
+database = []
 set= 1
       straten.each do |straat, info|
-         arr.push Street.new(straat,info[2],info[4],info[5],info[0],info[1])
+         database.push Street.new(straat,info[2],info[4],info[5],info[0],info[1])
+      end
+      straten.each do |straat, info|
+         database.push Street.new(straat,info[2],info[4],info[5],info[0],info[1])
       end
 
-      arr.each do |street|
-        puts "Rent for #{street.name} = € #{street.rent(set)}"
+      database.push Station.new('Noord')
+      database.push Station.new('Zuid')
+      database.push Station.new('Oost')
+      database.push Station.new('West')
 
+      database.push Utility.new('Waterbedrijf')
+      database.push Utility.new('Zuid')
+
+      database.each do |card|
+        puts "Rent for #{card.name} = € #{card.rent(set)}"
       end
 
   st1 = Station.new('Noord')
