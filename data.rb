@@ -43,7 +43,7 @@ system('clear')
 
 system('clear')
 
-
+database = []
   # - Create Streets in database
         straten.each do |name, info|
            database.push Street.new(straat,info[2],info[4],info[5],info[0],info[1])
@@ -71,7 +71,7 @@ database.each do |card|
   puts "Rent for #{card.name} = € #{card.rent(set)}"
 end
 
-  database = []
+
   set= 1
 
   st1 = Station.new('Noord')
