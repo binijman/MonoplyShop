@@ -15,8 +15,12 @@ puts "Rent for #{st1.name} = € #{st1.rent(set)}"
 collection = StreetCollection.new()
 streets = collection.streets
 
-arr.each do |street|
+# create database var -> array[obj]
+database = fill_database()
+
+database.each do |street|
   puts "Rent for #{street.name} = € #{street.rent(set)}"
+
 
 end
 
