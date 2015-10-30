@@ -52,15 +52,15 @@ def fill_database()
             "Den Haag"    => ["Banana-Yellow",3],
             "Rotterdam"   => ["Racing-Green",3],
             "Amsterdam"   => ["Bankrupt-Blue",2],
-            "Station"     => ["",2],
-            "Nutsbedrijf" => ["",2],
+            "Station"     => [" ",2],
+            "Nutsbedrijf" => [" ",2],
             }
 
 database = []
   # - Create Streets in database
         straten.each do |name, info|
                                  # (name,price  ,revenue, set_size, group  , color)
-           database.push Street.new(name,info[2],info[4], groups[info[0]][1] , info[0], groups[info[0]][0])
+           database.push Street.new(name,info[1],info[2], groups[info[0]][1] , info[0], groups[info[0]][0])
         end
 
   # - Create Stations in database
