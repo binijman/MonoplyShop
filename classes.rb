@@ -30,7 +30,7 @@ end
 
     class Street < Property
       attr_accessor :color
-      def initialize(name, price, revenue, group)
+      def initialize(name, group, price, revenue)
         @color = @@groups[group][0]
         super(name, price, revenue, owner, set_size, group)
       end
