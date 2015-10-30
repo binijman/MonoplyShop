@@ -8,7 +8,7 @@ require "./data.rb"              #  database  (streets / stations / utilties)
 system('clear')
 #-Vuldatabase
 database = fill_database()
-#-Tijdelijke set
+#-Tijdelijke waarden
 set = 3
 list_cards = []
 

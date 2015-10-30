@@ -34,16 +34,14 @@ def fill_database()
                  "Leidsche-Straat"  => ["Amsterdam", 350, 35],
                  "Kalverstraat"     => ["Amsterdam", 400, 50],
                 }
-
     stations =
             # [name]
             [ "Noord", "Oost", "Zuid", "West" ]
     nutsbedrijven =
             # [name]
             [ "Waterleiding", "Elektriciteitsbedrijf" ]
-
             # name  => [color, set_size]
-    groups ={
+    @@groups ={
             "Ons Dorp"    => ["Purple",2],
             "Arnhem"      => ["Babyblue",3],
             "Haarlem"     => ["Light-Purple",3],
@@ -56,11 +54,11 @@ def fill_database()
             "Nutsbedrijf" => [" ",2],
             }
 
-database = []
+    database = [] # create empty database
   # - Create Streets in database
         straten.each do |name, info|
-                                 # (name,price  ,revenue, set_size, group  , color)
-           database.push Street.new(name,info[1],info[2], groups[info[0]][1] , info[0], groups[info[0]][0])
+                                 # (name,price  ,revenue, group)
+           database.push Street.new(name,info[1],info[2], info[0])
         end
 
   # - Create Stations in database
@@ -74,5 +72,6 @@ database = []
         end
 
         return database
+        return groups
 end
 # - End Method
