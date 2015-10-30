@@ -16,7 +16,7 @@ require "./classes.rb"
 # - Method to Fill the Store Database.
 
 def fill_database()
-            # name  => [group , color , price, revenue, set_size]
+            # name  => [group, price, revenue]
   straten = {"Dorpsstraat"      => ["Ons Dorp", 60, 2],
              "Brink"            => ["Ons Dorp", 60, 4],
 
