@@ -20,7 +20,7 @@ class Property
     @name = name
     @price = price
     @revenue = revenue
-    @set_size = set_size
+    @set_size = @@groups[group][1]
     @group = group
     @owner = 'vacant'
   end
@@ -32,7 +32,6 @@ end
       attr_accessor :color
       def initialize(name, price, revenue, group)
         @color = @@groups[group][0]
-        @set_size = @@groups[group][1]
         super(name, price, revenue, owner, set_size, group)
       end
       def rent(set)
@@ -51,7 +50,6 @@ end
     def initialize(name)
       @price = 100
       @revenue = 25
-      @set_size = 2
       @group = "Nutsbedrijf"
       super(name, @price, @revenue, @owner, @set_size, @group)
     end
@@ -72,7 +70,6 @@ end
       def initialize(name)
         @price = 200
         @revenue = 25
-        @set_size = 4
         @group = "Station"
         super(name, @price, @revenue, @owner, @set_size, @group)
       end

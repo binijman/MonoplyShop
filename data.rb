@@ -1,5 +1,17 @@
 require "./classes.rb"
 
+@@groups ={
+        "Ons Dorp"    => ["Purple",2],
+        "Arnhem"      => ["Babyblue",3],
+        "Haarlem"     => ["Light-Purple",3],
+        "Utrecht"     => ["Dutch-Orange",3],
+        "Groningen"   => ["Heartbleed-Red",3],
+        "Den Haag"    => ["Banana-Yellow",3],
+        "Rotterdam"   => ["Racing-Green",3],
+        "Amsterdam"   => ["Bankrupt-Blue",2],
+        "Station"     => [" ",2],
+        "Nutsbedrijf" => [" ",2],
+        }
 # - Method to Fill the Store Database.
 
 def fill_database()
@@ -41,18 +53,7 @@ def fill_database()
             # [name]
             [ "Waterleiding", "Elektriciteitsbedrijf" ]
             # name  => [color, set_size]
-    @@groups ={
-            "Ons Dorp"    => ["Purple",2],
-            "Arnhem"      => ["Babyblue",3],
-            "Haarlem"     => ["Light-Purple",3],
-            "Utrecht"     => ["Dutch-Orange",3],
-            "Groningen"   => ["Heartbleed-Red",3],
-            "Den Haag"    => ["Banana-Yellow",3],
-            "Rotterdam"   => ["Racing-Green",3],
-            "Amsterdam"   => ["Bankrupt-Blue",2],
-            "Station"     => [" ",2],
-            "Nutsbedrijf" => [" ",2],
-            }
+
 
     database = [] # create empty database
   # - Create Streets in database
@@ -72,6 +73,5 @@ def fill_database()
         end
 
         return database
-        return groups
 end
 # - End Method
