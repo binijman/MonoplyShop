@@ -15,5 +15,6 @@ def list_playercards(database, player)
             revenue += property.revenue
         end
     end
-  puts "    ------------------------------------------------------\nTotal   € #{total}\t€ #{revenue} revenue per month."
+  puts "    ------------------------------------------------------
+  Total   € #{total}\t€ #{revenue} revenue per month."
 end

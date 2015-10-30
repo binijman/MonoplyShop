@@ -4,35 +4,35 @@ require "./classes.rb"
 
 def fill_database()
                 # name  => [group , color , price, revenue, set_size]
-      straten = {"Dorpsstraat"      => ["Ons Dorp", "Purple", 60, 2,2],
-                 "Brink"            => ["Ons Dorp", "Purple", 60, 4,2],
+      straten = {"Dorpsstraat"      => ["Ons Dorp", 60, 2],
+                 "Brink"            => ["Ons Dorp", 60, 4],
 
-                 "Steenstraat"      => ["Arnhem", "Babyblue", 100, 6,3],
-                 "Ketelstraat"      => ["Arnhem", "Babyblue", 100, 6,3],
-                 "Velperplein"      => ["Arnhem", "Babyblue", 120, 8,3],
+                 "Steenstraat"      => ["Arnhem", 100, 6],
+                 "Ketelstraat"      => ["Arnhem", 100, 6],
+                 "Velperplein"      => ["Arnhem", 120, 8],
 
-                 "Barteljorisstraat" => ["Haarlem", "Light-Purple", 140, 10,3],
-                 "Zijlweg"          => ["Haarlem", "Light-Purple", 140, 10,3],
-                 "Houtstraat"       => ["Haarlem", "Light-Purple", 150, 12,3],
+                 "Barteljorisstraat" => ["Haarlem", 140, 10],
+                 "Zijlweg"          => ["Haarlem", 140, 10],
+                 "Houtstraat"       => ["Haarlem", 150, 12],
 
-                 "Neude"            => ["Utrecht", "Dutch-Orange", 180, 14,3],
-                 "Biltstraat"       => ["Utrecht", "Dutch-Orange", 180, 14,3],
-                 "Vreeburg"         => ["Utrecht", "Dutch-Orange", 200, 16,3],
+                 "Neude"            => ["Utrecht", 180, 14],
+                 "Biltstraat"       => ["Utrecht", 180, 14],
+                 "Vreeburg"         => ["Utrecht", 200, 16],
 
-                 "A-Kerkhof"        => ["Groningen", "Heartbleed-Red", 220, 18,3],
-                 "Groote Markt"     => ["Groningen", "Heartbleed-Red", 220, 18,3],
-                 "Heerestraat"      => ["Groningen", "Heartbleed-Red", 240, 20,3],
+                 "A-Kerkhof"        => ["Groningen", 220, 18],
+                 "Groote Markt"     => ["Groningen", 220, 18],
+                 "Heerestraat"      => ["Groningen", 240, 20],
 
-                 "Spui"             => ["Den Haag", "Banana-Yellow", 260, 22,3],
-                 "Plein"            => ["Den Haag", "Banana-Yellow", 260, 22,3],
-                 "Lange-Poten"      => ["Den Haag", "Banana-Yellow", 280, 24,3],
+                 "Spui"             => ["Den Haag", 260, 22],
+                 "Plein"            => ["Den Haag", 260, 22],
+                 "Lange-Poten"      => ["Den Haag", 280, 24],
 
-                 "Hofplein"         => ["Rotterdam", "Racing-Green", 300, 26,3],
-                 "Blaak"            => ["Rotterdam", "Racing-Green", 300, 26,3],
-                 "Coolsingel"       => ["Rotterdam", "Racing-Green", 320, 28,3],
+                 "Hofplein"         => ["Rotterdam", 300, 26],
+                 "Blaak"            => ["Rotterdam", 300, 26],
+                 "Coolsingel"       => ["Rotterdam", 320, 28],
 
-                 "Leidsche-Straat"  => ["Amsterdam", "Bankrupt-Blue", 350, 35,2],
-                 "Kalverstraat"     => ["Amsterdam", "Bankrupt-Blue", 400, 50,2],
+                 "Leidsche-Straat"  => ["Amsterdam", 350, 35],
+                 "Kalverstraat"     => ["Amsterdam", 400, 50],
                 }
 
     stations =
@@ -60,7 +60,7 @@ database = []
   # - Create Streets in database
         straten.each do |name, info|
                                  # (name,price  ,revenue, set_size, group  , color)
-           database.push Street.new(name,info[2],info[4], info[5] , info[0], info[1])
+           database.push Street.new(name,info[2],info[4], groups[info[0]][1] , info[0], groups[info[0]][0])
         end
 
   # - Create Stations in database
